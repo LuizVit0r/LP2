@@ -48,6 +48,38 @@ class Frame extends JFrame {
                 }
             }
         );
+        
+        this.addMouseListener (
+            new MouseAdapter() {
+                public void mouseClicked (MouseEvent evt){
+                    super.mouseClicked(evt);
+                    for (Figure fig : fs) {
+                        
+                        if (!fs.contains(evt.getPoint())) {
+                        
+                            if (fig instanceof Rect) {
+                                System.out.println("Clicked a rectangle");
+                            } else if (fig instanceof Ellipse) {
+                                System.out.println("Clicked a circle");
+                            }
+                            
+                        }
+                    }
+                }
+                public void mousePressed (MouseEvent evt){
+                    System.out.println("pressionou");
+                }
+                public void mouseReleased (MouseEvent evt){
+                    System.out.println("soltou");
+                }
+                public void mouseEntered (MouseEvent evt){
+                    System.out.println("entrou");
+                }
+                public void mouseExited (MouseEvent evt){
+                    System.out.println("saiu");
+                }
+            }
+        );
 
         this.setTitle("Editor Grafico Vetorial");
         this.setSize(350, 350);
