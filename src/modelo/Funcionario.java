@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Funcionario {
 	private String nome;
-	private double sal;
+	private double codigo;
 	private String cpf;
-	private int ano;
+	private int tel;
 	
-	public Funcionario(String nome, double sal, String cpf, int ano) {
+	public Funcionario(String nome, double codigo, String cpf, int tel) {
 		this.nome=nome;
-		this.sal=sal;
+		this.codigo=codigo;
 		this.cpf=cpf;
-		this.ano=ano;
+		this.tel=tel;
 	}
 	public Funcionario() {
 	}
@@ -23,11 +23,11 @@ public class Funcionario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public double getSal() {
-		return sal;
+	public double getCodigo() {
+		return codigo;
 	}
-	public void setSal(double sal) {
-		this.sal = sal;
+	public void setCodigo(double codigo) {
+		this.codigo = codigo;
 	}
 	public String getCpf() {
 		return cpf;
@@ -35,44 +35,43 @@ public class Funcionario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getAno() {
-		return ano;
+	public int getTel() {
+		return tel;
 	}
-	public void setAno(int ano) {
-		this.ano = ano;
+	public void setTel(int tel) {
+		this.tel = tel;
 	}
 	
 	public void le() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite o nome:");
 		setNome(sc.next());
-		System.out.println("Digite o salario:");
-		setSal(sc.nextDouble());
+		System.out.println("Digite o codigo:");
+		setCodigo(sc.nextDouble());
 		System.out.println("Digite o CPF:");
 		setCpf(sc.next());
-		System.out.println("Digite o ano da contratação:");
-		setAno(sc.nextInt());
+		System.out.println("Digite o telefone:");
+		setTel(sc.nextInt());
 	}
 	
 	public void imprime() {
 		System.out.println("Dados do Funcionario");
 		System.out.println("Nome: ");
 		System.out.println(getNome());
-		System.out.println("Salario: ");
-		System.out.println(getSal());
+		System.out.println("Codigo: ");
+		System.out.println(getCodigo());
 		System.out.println("CPF: ");
 		System.out.println(getCpf());
-		System.out.println("Ano da contratação: ");
-		System.out.println(getAno());
+		System.out.println("Telefone: ");
+		System.out.println(getTel());
 	}
 	
-	public void aumentaSalario() {
-		double x;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Digite quantos % o salario vai aumentar:");
-		x = sc.nextDouble();
-		x = x/100;
-		this.sal += x*this.sal;
-		System.out.println("Novo salario: "+this.sal);
+	public int buscaNome(String nome) {
+		int x = 0;
+		if(this.nome.equals(nome)){
+			x++;
+		}else{
+		}
+		return x;
 	}
 }
