@@ -3,7 +3,7 @@ package modelo;
 import java.util.Scanner;
 
 public class Funcionario {
-	private String nome;
+	public String nome;
 	private double codigo;
 	private String cpf;
 	private int tel;
@@ -66,12 +66,5 @@ public class Funcionario {
 		System.out.println(getTel());
 	}
 	
-	public int buscaNome(String nome) {
-		int x = 0;
-		if(this.nome.equals(nome)){
-			x++;
-		}else{
-		}
-		return x;
-	}
+	//public void buscaNome(String nome , int qtd )
 }
